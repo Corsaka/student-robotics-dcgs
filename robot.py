@@ -1,19 +1,39 @@
-print("Hello World!")
-#imports
+print("Robot online!")
+
 from sr.robot import *
 from time import sleep
-R = Robot()
+R = Robot.setup()
+
+class CustomisedRuggeduino(Ruggeduino):
+    def ultrasonicSensor(self):
+        with self.lock:
+            distance = self.command("u")
+            print "Distance: " + str(distance) + " cm away"
+            return distance
+ 
+
+def move(side,speed):
+    backleft=R.motors[0].m1
+    backright=R.motors[0].m0
+    frontleft=R.motors[1].m1
+    frontright=R.motors[1].m0
+    if side=='right':
+        frontright.power,backright.power,frontleft.power,backleft.power = -speed,-speed,-speed,-speed
+    if side=='left':
+        frontleft.power,backleft.power,frontright.power,backright.power = speed,speed,speed,speed
+    if side=='both':
+        backright.power,backright.power,frontleft.power,backleft.power = speed,speed,-speed,-speed
+    if side=='none':
+        backright.power,backright.power,frontleft.power,backleft.power = 0,0,0,0
+
+R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
+R.init()
+R.wait_start()
 
 while True:
- #   R.servos["sr0VY24"][0] = 0
-  #  for i in range(19):
-   #     R.servos["sr0VY24"][0] = (R.servos["sr0VY24"][0])+5
-#        sleep(0.05)
- #   for i in range(19):
-  #      R.servos["sr0VY24"][0] = (R.servos["sr0VY24"][0])-5
-   #     sleep(0.05)
-    markers = R.see(res=(1280,720)) # makes a list of markers it sees
-    print("I can see"), len(markers), "markers:" #prints no. of markers
-    for m in markers: 
-        if m.info.marker_type in (MARKER_TOKEN_A, MARKER_TOKEN_B, MARKER_TOKEN_C):
-          print(" - Marker #{0} is {1} metres away".format( m.info.code, m.dist )) #prints what markers are how far away
+    distanceAway = int(R.ruggeduinos["75230313833351618141"].ultrasonicSensor())
+    print str(distanceAway)
+    if distanceAway < 10:
+        move('none',0)
+    else:
+        move('both',75)
