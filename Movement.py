@@ -13,20 +13,12 @@ class CustomisedRuggeduino(Ruggeduino):
             return distance
         # prints distance away from wherever the camera is pointed
 
-def move(side,speed):
-    backleft=R.motors[0].m1
-    backright=R.motors[0].m0
-    frontleft=R.motors[1].m1
-    frontright=R.motors[1].m0
-    # defines the four motors
-    if side=='right':
-        frontright.power,backright.power,frontleft.power,backleft.power = -speed,-speed,-speed,-speed
-    if side=='left':
+def move(command,speed):
+    backleft,backright,frontleft,frontright=R.motors[0].m1,R.motors[0].m0,R.motors[1].m1,R.motors[1].m0 #I put all this on one line like I had below
+    if command=='turn': #positive is left, negative is right, zero stops it 
         frontleft.power,backleft.power,frontright.power,backright.power = speed,speed,speed,speed
-    if side=='both':
+    if command=='straight':#positive is forward, negative is right, zero is stop
         backright.power,backright.power,frontleft.power,backleft.power = speed,speed,-speed,-speed
-    if side=='none':
-        backright.power,backright.power,frontleft.power,backleft.power = 0,0,0,0
     # each of these if statements takes side as an input
     # defined by the while loop below
     # and then adjusts the speed of the motors accordingly
@@ -39,10 +31,10 @@ while True:
     distanceAway = int(R.ruggeduinos["75230313833351618141"].ultrasonicSensor())
     print str(distanceAway)
     if distanceAway < 10:
-        move('none',0)
+        move('straight',0)
         # stops the robot
     else:
-        move('both',75)
+        move('straight',75)
         # moves the robot forward
 # todo:
 # left/right turns
