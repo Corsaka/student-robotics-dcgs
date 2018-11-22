@@ -38,4 +38,5 @@ def findplace():
             lasty=8- int(lastx)
         elif direction='s':
             lasty= int(lastx)
-    #then make the camera turn and figure out the other coordinate  
+    #then make the camera turn and figure out the other coordinate properly*
+    #*(it does work out the other co-ordinate somewhat, though not perfectly if not aligned with it, so it needs to turn the camera)
