@@ -15,9 +15,9 @@ class CustomisedRuggeduino(Ruggeduino):
 
 def move(command,speed):
     backleft,backright,frontleft,frontright=R.motors[0].m1,R.motors[0].m0,R.motors[1].m1,R.motors[1].m0 #I put all this on one line like I had below
-    if command=='turn': #positive is left, negative is right, zero stops it 
+    if command=='turn': # positive is left, negative is right, zero stops it 
         frontleft.power,backleft.power,frontright.power,backright.power = speed,speed,speed,speed
-    if command=='straight':#positive is forward, negative is right, zero is stop
+    if command=='straight': # positive is forward, negative is backward, zero is stop
         backright.power,backright.power,frontleft.power,backleft.power = speed,speed,-speed,-speed
     # each of these if statements takes side as an input
     # defined by the while loop below
