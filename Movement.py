@@ -35,9 +35,9 @@ while True:
         # stops the robot
    
     elif distanceAway < 30: #adjustable speed within 30cm of wall
-        move('straight'), 25
+        move('straight', 15)
     else:
-        move('straight',75)
+        move('straight',25)
         # moves the robot forward
       
 #left/right turns
