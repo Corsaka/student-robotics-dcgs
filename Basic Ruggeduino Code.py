@@ -4,7 +4,8 @@ R = Robot()
 
 R.ruggeduinos["75230313833351618141"].pin_mode(13, OUTPUT) #Sets pin 13 to an output
 
-while True:
+#Example Function
+def ledBlink():
     R.ruggeduinos["75230313833351618141"].digital_write(13, True) #Turns on pin 13
     sleep(1)
     R.ruggeduinos["75230313833351618141"].digital_write(13, False) #Turns off pin 13
