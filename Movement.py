@@ -41,8 +41,9 @@ while True:
         # moves the robot forward
       
 #left/right turns
-move('turn', -75) #turn right
-move('turn', 75) #turn left
+#move('turn', -75) #turn right
+#move('turn', 75) #turn left
+# commented these out because there’s no trigger for them yet
 
 # todo:
 # gradually slowing down perhaps when coming close to a wall
