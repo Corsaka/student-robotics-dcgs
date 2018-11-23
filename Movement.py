@@ -36,6 +36,10 @@ while True:
     else:
         move('straight',75)
         # moves the robot forward
+      
+#left/right turns
+move('turn', -75) //turn right
+move('turn', 75) //turn left
 # todo:
 # left/right turns
 # adjustable speed, perhaps based on distance
