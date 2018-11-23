@@ -21,7 +21,12 @@ The templates branch is a bunch of examples of how the scripts work. They should
 To put code into the robot, you will need to commit to the master branch. 
 Paste code into the *robot.py* file which is inside the *user* folder.
 **DO NOT CHANGE ANY OTHER FILE.**
-Then you just need to download the ZIP, rename it to *robot.zip* and put on the robot's USB.
+Then these things need to happen:
+
+1. Unzip the file.
+2. Open the unzipped folder.
+3. Zip everything in this folder into a folder called *robot.zip*.
+4. Put that zip onto the robot's USB.
 
 
 **That is all.**
