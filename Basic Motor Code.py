@@ -1,7 +1,6 @@
 from sr.robot import *
 from time import sleep
 R = Robot()
-motor = R.motors[0].m1.power #Just like the line above - shortens amount of typing required
 
 #Example Function
 def moveForwards():
