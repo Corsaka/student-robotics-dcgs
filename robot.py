@@ -37,7 +37,7 @@ while True:
         move('straight',0)
         # stops the robot
     else:
-        move('straight',75)
+        move('straight',15)
         # moves the robot forward
 # todo:
 # left/right turns
