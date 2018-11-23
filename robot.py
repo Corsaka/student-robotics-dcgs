@@ -19,9 +19,9 @@ def move(command,speed):
     frontleft=R.motors[1].m1
     frontright=R.motors[1].m0
     if command=='turn': #positive is left, negative is right, zero stops it 
-        frontleft.power,backleft.power,frontright.power,backright.power = speed,speed,speed,speed
+        frontleft.power,backleft.power,frontright.power,backright.power = speed,speed,-speed,speed
     if command=='straight':#positive is forward, negative is right, zero is stop
-        backright.power,backright.power,frontleft.power,backleft.power = speed,speed,-speed,-speed
+        backright.power,backright.power,frontleft.power,backleft.power = speed,speed,speed,-speed
     # each of these if statements takes side as an input
     # defined by the while loop below
     # and then adjusts the speed of the motors accordingly
