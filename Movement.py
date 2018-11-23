@@ -33,13 +33,16 @@ while True:
     if distanceAway < 10:
         move('straight',0)
         # stops the robot
+   
+    elif distanceAway < 30: #adjustable speed within 30cm of wall
+        move('straight'), 25
     else:
         move('straight',75)
         # moves the robot forward
       
 #left/right turns
-move('turn', -75) //turn right
-move('turn', 75) //turn left
+move('turn', -75) #turn right
+move('turn', 75) #turn left
+
 # todo:
-# left/right turns
-# adjustable speed, perhaps based on distance
+# gradually slowing down perhaps when coming close to a wall
