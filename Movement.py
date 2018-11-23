@@ -47,3 +47,4 @@ while True:
 
 # todo:
 # gradually slowing down perhaps when coming close to a wall
+# add a trigger for left/right turns, perhaps in combination with vision.py to turn around the arena
