@@ -22,7 +22,7 @@ def basicMovement():
   sleep(3)
   R.motors[1].m0.power = 100
   R.motors[1].m1.power = 100
-  sleep(1.5)
+  sleep(1.25)
 
 while True:
   basicMovement()
