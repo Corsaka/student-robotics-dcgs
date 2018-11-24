@@ -20,7 +20,7 @@ class CustomisedRuggeduino(Ruggeduino):
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
-R.ruggeduinos["75230313833351618141"].gyroTurn()
+R.ruggeduinos["75230313833351618141"].gyroSetup()
 
 def basicMovement():
   R.motors[0].m0.power = 100
