@@ -9,6 +9,9 @@ class CustomisedRuggeduino(Ruggeduino):
             print(distance)
             if distance < 10:
                 R.power.beep(1000, 'a')
+    def gyroSetup(self):
+        with self.lock:
+            self.command("b")
     def gyroTurn(self):
         with self.lock:
             gyro = self.command("t")
@@ -17,6 +20,7 @@ class CustomisedRuggeduino(Ruggeduino):
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
+R.ruggeduinos["75230313833351618141"].gyroTurn()
 
 def basicMovement():
   R.motors[0].m0.power = 100
