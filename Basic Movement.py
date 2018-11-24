@@ -24,7 +24,7 @@ def basicMovement():
   R.motors[1].m0.power = -100
   R.motors[1].m1.power = -100
   sleep(1)
-  gyroTurn()
+   R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
 
 while True:
   basicMovement()
