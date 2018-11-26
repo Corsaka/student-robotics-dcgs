@@ -21,4 +21,4 @@ R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
 
-print(getAngle) #Returns the current angle in degrees (nearest integer)
+print(getAngle) #Prints the current angle in degrees (nearest integer)
