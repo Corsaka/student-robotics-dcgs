@@ -45,7 +45,7 @@ def turnAround():
 def movement():
     global angle, desiredAngle
     angle = R.ruggeduinos["75230313833351618141"].getAngle()
-    desiredAngle = angle + 90
+    desiredAngle = angle + 180
     R.motors[0].m0.power = 100
     R.motors[0].m1.power = 100
     R.motors[1].m0.power = -100
@@ -53,7 +53,7 @@ def movement():
     sleep(1.5)
     turnAround()
     angle = R.ruggeduinos["75230313833351618141"].getAngle()
-    desiredAngle = angle + 90
+    desiredAngle = angle + 180
     R.motors[0].m0.power = 100
     R.motors[0].m1.power = 100
     R.motors[1].m0.power = -100
