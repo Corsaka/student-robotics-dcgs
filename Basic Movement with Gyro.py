@@ -1,6 +1,5 @@
 from sr.robot import *
 from time import sleep
-import math
 R = Robot.setup()
 
 angle = 0
@@ -15,7 +14,7 @@ class CustomisedRuggeduino(Ruggeduino):
                 R.power.beep(1000, 'a')    
     def getAngle(self):
         with self.lock:
-            gyro = int(math.floor(float(self.command("t").replace('\n', ''))))
+            gyro = int(round(float(self.command("t").replace('\n', ''))))
             return gyro
             
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
