@@ -18,6 +18,10 @@ class CustomisedRuggeduino(Ruggeduino):
             gyro = int(math.floor(float(self.command("t").replace('\n', ''))))
             return gyro
             
+R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
+R.init()
+R.wait_start()
+
 def halfTurn():
     global desiredAngle
     gyro = R.ruggeduinos["75230313833351618141"].getAngle()    
@@ -58,8 +62,4 @@ def movement():
     sleep(1.5)
     turnAround()
     
-R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
-R.init()
-R.wait_start()
-
 movement()
