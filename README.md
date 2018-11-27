@@ -10,7 +10,7 @@ DO NOT COMMIT TO MASTER.
 
 **Thirdly:**
 
-The master branch is for downloading. Request to add your command from the commands branch into it.
+The master branch is for downloading. If you want to make changes to the robot.py file, edit it in the master branch but select "Make a new branch for this commit".
 
 The commands branch is for putting a file of a single command that you've made. You can then request it be merged into master.
 
