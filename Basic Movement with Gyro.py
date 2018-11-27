@@ -24,10 +24,10 @@ R.wait_start()
 def halfTurn():
     global desiredAngle
     gyro = R.ruggeduinos["75230313833351618141"].getAngle()    
-    if gyro != desiredAngle:
-        return False
-    else:
+    if gyro >= desiredAngle:
         return True
+    else:
+        return False
 
 def turnAround():
     if not halfTurn():
