@@ -16,6 +16,10 @@ class CustomisedRuggeduino(Ruggeduino):
             gyro = int(round(float(self.command("t").replace('\n', ''))))
             return gyro
             
+R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
+R.init()
+R.wait_start()
+
 for i in range(0, 500):
   angle += R.ruggeduinos["75230313833351618141"].getAngle()
 newAngle = angle/500
