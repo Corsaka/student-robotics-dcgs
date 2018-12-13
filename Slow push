@@ -1,0 +1,3 @@
+a=input("E")
+for i range(a):
+ 
