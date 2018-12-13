@@ -1,0 +1,13 @@
+from sr.robot import *
+from time import sleep
+R = Robot.setup()
+
+def check_for_push():
+  if distance < 5:
+    push_block_fast()
+    
+
+def push_block_fast():
+  R.motors[1].m0.power = 100
+  sleep(0.5)
+  R.motors[1].m0.power = 0
