@@ -20,7 +20,8 @@ R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
 
-for i in range(0, 500):
-  angle += R.ruggeduinos["75230313833351618141"].getAngle()
-newAngle = angle/500
-print('Done: %d' % (newAngle))
+while True:
+    for i in range(0, 500):
+      angle += R.ruggeduinos["75230313833351618141"].getAngle()
+    newAngle = angle/500
+    print('Done: %d' % (newAngle))
