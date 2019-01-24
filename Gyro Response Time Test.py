@@ -2,8 +2,6 @@ from sr.robot import *
 from time import sleep
 R = Robot.setup()
 
-angle = 0
-
 class CustomisedRuggeduino(Ruggeduino):
     def ultrasonicSensor(self):
         with self.lock:
@@ -21,6 +19,8 @@ R.init()
 R.wait_start()
 
 while True:
+    newAngle = 0
+    angle = 0
     for i in range(0, 500):
       angle += R.ruggeduinos["75230313833351618141"].getAngle()
     newAngle = angle/500
