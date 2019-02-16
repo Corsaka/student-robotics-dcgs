@@ -2,8 +2,6 @@ from sr.robot import *
 from time import sleep
 R = Robot.setup()
 
-startAngle = 0
-
 class CustomisedRuggeduino(Ruggeduino):
     def ultrasonicSensor(self):
         with self.lock:
@@ -23,6 +21,7 @@ def halfTurn(startAngle):
     newAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
     if newAngle >= startAngle + 180 or newAngle <= startAngle - 180:
         return True
+        print(newAngle)
     else:
         return False
 
@@ -40,13 +39,13 @@ def turnAround(angle):
       R.motors[1].m1.power = 0
       
 def movement():
-    global startAngle
     R.motors[0].m0.power = -100
     R.motors[0].m1.power = -100
     R.motors[1].m0.power = 100
     R.motors[1].m1.power = 100
     sleep(1)
     startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    print(startAngle)
     turnAround(startAngle)
     R.motors[0].m0.power = -100
     R.motors[0].m1.power = -100
@@ -54,6 +53,7 @@ def movement():
     R.motors[1].m1.power = 100
     sleep(1)
     startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    print(startAngle)
     turnAround(startAngle)
     
 movement()
