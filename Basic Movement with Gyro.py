@@ -18,7 +18,10 @@ R.init()
 R.wait_start()
 
 def halfTurn(startAngle):
-    newAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    try:
+        newAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    except ValueError:
+        newAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
     if newAngle >= startAngle + 180 or newAngle <= startAngle - 180:
         return True
         print(newAngle)
@@ -44,7 +47,10 @@ def movement():
     R.motors[1].m0.power = 100
     R.motors[1].m1.power = 100
     sleep(1)
-    startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    try:
+        startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    except ValueError:
+        startAngle = int(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
     print(startAngle)
     turnAround(startAngle)
     R.motors[0].m0.power = -100
@@ -52,7 +58,10 @@ def movement():
     R.motors[1].m0.power = 100
     R.motors[1].m1.power = 100
     sleep(1)
-    startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    try:
+        startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    except ValueError:
+        startAngle = int(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
     print(startAngle)
     turnAround(startAngle)
     
