@@ -20,7 +20,7 @@ R.wait_start()
 def halfTurn():
     startAngle = getAngle()
     newAngle = getAngle()
-    if newAngle = startAngle + 180 or newAngle = startAngle - 180:
+    if newAngle == startAngle + 180 or newAngle == startAngle - 180:
         return True
     else
         return False
