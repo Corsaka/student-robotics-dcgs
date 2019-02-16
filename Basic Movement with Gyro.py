@@ -2,9 +2,6 @@ from sr.robot import *
 from time import sleep
 R = Robot.setup()
 
-angle = 0
-desiredAngle = 0
-
 class CustomisedRuggeduino(Ruggeduino):
     def ultrasonicSensor(self):
         with self.lock:
@@ -14,19 +11,18 @@ class CustomisedRuggeduino(Ruggeduino):
                 R.power.beep(1000, 'a')    
     def getAngle(self):
         with self.lock:
-            gyro = int(round(float(self.command("t").replace('\n', ''))))
-            return gyro
+            return self.command("t")
             
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
 
 def halfTurn():
-    global desiredAngle
-    gyro = R.ruggeduinos["75230313833351618141"].getAngle()    
-    if gyro >= desiredAngle:
+    startAngle = getAngle()
+    newAngle = getAngle()
+    if newAngle = startAngle + 180 or newAngle = startAngle - 180:
         return True
-    else:
+    else
         return False
 
 def turnAround():
@@ -43,22 +39,17 @@ def turnAround():
       R.motors[1].m1.power = 0
       
 def movement():
-    global angle, desiredAngle
-    angle = R.ruggeduinos["75230313833351618141"].getAngle()
-    desiredAngle = angle + 180
     R.motors[0].m0.power = 100
     R.motors[0].m1.power = 100
     R.motors[1].m0.power = -100
     R.motors[1].m1.power = -100
-    sleep(1.5)
+    sleep(1)
     turnAround()
-    angle = R.ruggeduinos["75230313833351618141"].getAngle()
-    desiredAngle = angle + 180
     R.motors[0].m0.power = 100
     R.motors[0].m1.power = 100
     R.motors[1].m0.power = -100
     R.motors[1].m1.power = -100
-    sleep(1.5)
+    sleep(1)
     turnAround()
     
 movement()
