@@ -39,6 +39,10 @@ def movement():
         startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
     except ValueError:
         startAngle = 0.00
+    try:
+        startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    except ValueError:
+        startAngle = 0.00
     print(startAngle)
     turnAround(startAngle)
     R.motors[0].m0.power = -100
