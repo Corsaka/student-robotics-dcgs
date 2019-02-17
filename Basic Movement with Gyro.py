@@ -18,10 +18,10 @@ R.init()
 R.wait_start()
 
 def turnAround(angle):
-  R.motors[0].m0.power = 50
-  R.motors[0].m1.power = 50
-  R.motors[1].m0.power = 50
-  R.motors[1].m1.power = 50
+  R.motors[0].m0.power = 100
+  R.motors[0].m1.power = 100
+  R.motors[1].m0.power = 100
+  R.motors[1].m1.power = 100
   while float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', '')) <= angle + 180:
      sleep(0.0000000000001)
   R.motors[0].m0.power = 0
