@@ -19,3 +19,4 @@ R.wait_start()
 
 while True:
 	print(R.ruggeduinos["75230313833351618141"].getAngle())
+	sleep(1)
