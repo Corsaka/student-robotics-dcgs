@@ -21,3 +21,4 @@ ultrasonicSensor = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
 
 while True:
     print(ultrasonicSensor)
+    sleep(1)
