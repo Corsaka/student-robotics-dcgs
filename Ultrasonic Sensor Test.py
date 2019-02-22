@@ -6,6 +6,8 @@ class CustomisedRuggeduino(Ruggeduino):
     def ultrasonicSensor(self):
         with self.lock:
             distance = self.command("x")
+            distance = self.command("x")
+            distance = self.command("x")
             return distance  
     def getAngle(self):
         with self.lock:
