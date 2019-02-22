@@ -15,9 +15,5 @@ R.init()
 R.wait_start()
 
 while True:
-    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
-    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
-    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
-    if distance < 10:
-        print('Too Close!!!')
-    sleep(0.5)  
+    print(R.ruggeduinos["75230313833351618141"].ultrasonicSensor())
+    sleep(2)
