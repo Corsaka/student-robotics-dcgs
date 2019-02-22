@@ -39,11 +39,14 @@ def forwards(time):
 def sentry():
     startAngle = R.ruggeduinos["75230313833351618141"].getAngle()
     startAngle = R.ruggeduinos["75230313833351618141"].getAngle()
-    forwards(1)
+    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
+    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
+    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
+    while int(distance) <= 10:
+        forwards(0.01)
+        sleep(0.05)
     startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
     turnAround(startAngle, 180)
-    forwards(1)
-    startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
-    turnAround(startAngle, 180)
-    
-sentry()
+
+while True:
+    sentry()
