@@ -5,7 +5,7 @@ R = Robot.setup()
 class CustomisedRuggeduino(Ruggeduino):
     def ultrasonicSensor(self):
         with self.lock:
-            distance = self.command("u")
+            distance = self.command("x")
             return distance  
     def getAngle(self):
         with self.lock:
