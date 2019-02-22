@@ -21,3 +21,4 @@ while True:
     print(distance)
     if distance < 10:
         print('Too Close!!!')
+    sleep(2)
