@@ -13,12 +13,11 @@ class CustomisedRuggeduino(Ruggeduino):
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
-R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
-R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
 
 while True:
     distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
+    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
+    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
     if distance < 10:
         print('Too Close!!!')
-    sleep(0.5)
-    
+    sleep(0.5)  
