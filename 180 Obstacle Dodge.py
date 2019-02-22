@@ -38,8 +38,7 @@ def sentry():
     startAngle = R.ruggeduinos["75230313833351618141"].getAngle()
     distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
     distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
-    distance = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
-    while int(distance) >= 10:
+    while int(R.ruggeduinos["75230313833351618141"].ultrasonicSensor()) >= 10:
         forwards(0.01)
         sleep(0.05)
     startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
