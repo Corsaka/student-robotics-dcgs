@@ -5,10 +5,7 @@ R = Robot.setup()
 class CustomisedRuggeduino(Ruggeduino):
     def ultrasonicSensor(self):
         with self.lock:
-            distance = self.command("x")
-            print(distance)
-            if distance < 10:
-                R.power.beep(1000, 'a')    
+            return self.command("x")   
     def getAngle(self):
         with self.lock:
             return self.command("t")
