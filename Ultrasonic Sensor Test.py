@@ -6,7 +6,7 @@ class CustomisedRuggeduino(Ruggeduino):
     def ultrasonicSensor(self):
         with self.lock:
             distance = self.command("u")
-            print(distance)  
+            return distance  
     def getAngle(self):
         with self.lock:
             return self.command("t")
@@ -18,4 +18,4 @@ R.wait_start()
 ultrasonicSensor = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
 
 while True:
-    ultrasonicSensor
+    print(ultrasonicSensor)
