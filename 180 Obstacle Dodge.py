@@ -14,3 +14,33 @@ R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
 
+def turnAround(angle, desired):
+    R.motors[0].m0.power = 40
+    R.motors[0].m1.power = 40
+    R.motors[1].m0.power = 40
+    R.motors[1].m1.power = 40
+    while float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', '')) <= angle + desired:
+     sleep(0.0000000000001)
+    R.motors[0].m0.power = 0
+    R.motors[0].m1.power = 0
+    R.motors[1].m0.power = 0
+    R.motors[1].m1.power = 0
+    
+def forwards(time)
+    R.motors[0].m0.power = -100
+    R.motors[0].m1.power = -100
+    R.motors[1].m0.power = 100
+    R.motors[1].m1.power = 100
+    sleep(time)
+    
+def sentry():
+    startAngle = R.ruggeduinos["75230313833351618141"].getAngle()
+    startAngle = R.ruggeduinos["75230313833351618141"].getAngle()
+    forwards(1)
+    startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    turnAround(startAngle, 180)
+    forwards(1)
+    startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    turnAround(startAngle, 180)
+    
+ sentry()
