@@ -29,7 +29,7 @@ def turnAround(angle, desired):
     R.motors[1].m0.power = 0
     R.motors[1].m1.power = 0
     
-def forwards(time)
+def forwards(time):
     R.motors[0].m0.power = -100
     R.motors[0].m1.power = -100
     R.motors[1].m0.power = 100
