@@ -46,4 +46,4 @@ def sentry():
     startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
     turnAround(startAngle, 180)
     
- sentry()
+sentry()
