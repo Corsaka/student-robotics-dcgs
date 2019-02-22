@@ -14,9 +14,10 @@ class CustomisedRuggeduino(Ruggeduino):
             return self.command("t")
                 
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
-ultrasonicSensor = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
 R.init()
 R.wait_start()
+
+ultrasonicSensor = R.ruggeduinos["75230313833351618141"].ultrasonicSensor()
 
 while True:
     ultrasonicSensor
