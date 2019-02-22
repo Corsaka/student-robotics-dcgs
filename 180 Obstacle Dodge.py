@@ -5,7 +5,7 @@ R = Robot.setup()
 class CustomisedRuggeduino(Ruggeduino):
     def ultrasonicSensor(self):
         with self.lock:
-            distance = self.command("u")
+            distance = self.command("x")
             print(distance)
             if distance < 10:
                 R.power.beep(1000, 'a')    
