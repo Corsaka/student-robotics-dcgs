@@ -38,13 +38,27 @@ def movement():
     R.motors[1].m1.power = 100
     sleep(2)
     startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
-    turnAround(startAngle, 180)
+    turnAround(startAngle, 90)
+    R.motors[0].m0.power = -100
+    R.motors[0].m1.power = -100
+    R.motors[1].m0.power = 100
+    R.motors[1].m1.power = 100
+    sleep(0.5)
+    startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    turnAround(startAngle, 90)
     R.motors[0].m0.power = -100
     R.motors[0].m1.power = -100
     R.motors[1].m0.power = 100
     R.motors[1].m1.power = 100
     sleep(2)
     startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
-    turnAround(startAngle, 180)
+    turnAround(startAngle, 90)
+    R.motors[0].m0.power = -100
+    R.motors[0].m1.power = -100
+    R.motors[1].m0.power = 100
+    R.motors[1].m1.power = 100
+    sleep(0.5)
+    startAngle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+    turnAround(startAngle, 90)
     
 movement()
