@@ -11,12 +11,13 @@ class CustomisedRuggeduino(Ruggeduino):
                 R.power.beep(1000, 'a')    
     def getAngle(self):
         with self.lock:
-            return self.command("t")
+		yaw = self.command("t")
+		print(yaw)
             
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
 
 while True:
-	print(R.ruggeduinos["75230313833351618141"].getAngle())
+	R.ruggeduinos["75230313833351618141"].getAngle()
 	sleep(1)
