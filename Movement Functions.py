@@ -38,10 +38,10 @@ def backwards(time):
   sleep(time)
 
 def left(angle):
-  R.motors[0].m0.power = 20
-  R.motors[0].m1.power = 20
-  R.motors[1].m0.power = 20
-  R.motors[1].m1.power = 20
+  R.motors[0].m0.power = 30
+  R.motors[0].m1.power = 30
+  R.motors[1].m0.power = 30
+  R.motors[1].m1.power = 30
   while float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', '')) <= angle + 90:
      sleep(0.00000000000000001)
   R.motors[0].m0.power = 0
@@ -50,10 +50,10 @@ def left(angle):
   R.motors[1].m1.power = 0
   
 def right(angle):
-  R.motors[0].m0.power = -20
-  R.motors[0].m1.power = -20
-  R.motors[1].m0.power = -20
-  R.motors[1].m1.power = -20
+  R.motors[0].m0.power = -30
+  R.motors[0].m1.power = -30
+  R.motors[1].m0.power = -30
+  R.motors[1].m1.power = -30
   while float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', '')) > angle - 90:
      sleep(0.00000000000000001)
   R.motors[0].m0.power = 0
@@ -62,10 +62,10 @@ def right(angle):
   R.motors[1].m1.power = 0
   
 def turnAround(angle):
-  R.motors[0].m0.power = 20
-  R.motors[0].m1.power = 20
-  R.motors[1].m0.power = 20
-  R.motors[1].m1.power = 20
+  R.motors[0].m0.power = 30
+  R.motors[0].m1.power = 30
+  R.motors[1].m0.power = 30
+  R.motors[1].m1.power = 30
   while float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', '')) <= angle + 180:
      sleep(0.00000000000000001)
   R.motors[0].m0.power = 0
