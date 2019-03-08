@@ -2,13 +2,7 @@ from sr.robot import *
 from time import sleep
 R = Robot.setup()
 
-class CustomisedRuggeduino(Ruggeduino):
-    def ultrasonicSensor(self):
-        with self.lock:
-            distance = self.command("u")
-            print(distance)
-            if distance < 10:
-                R.power.beep(1000, 'a')    
+class CustomisedRuggeduino(Ruggeduino):  
     def getAngle(self):
         with self.lock:
             return self.command("t")
