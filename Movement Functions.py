@@ -11,18 +11,6 @@ R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
                    
-def turn(angle, desired):
-  R.motors[0].m0.power = 28
-  R.motors[0].m1.power = 28
-  R.motors[1].m0.power = 28
-  R.motors[1].m1.power = 28
-  while float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', '')) <= angle + desired:
-     sleep(0.0000000000001)
-  R.motors[0].m0.power = 0
-  R.motors[0].m1.power = 0
-  R.motors[1].m0.power = 0
-  R.motors[1].m1.power = 0
-  
 def forwards(time):
   R.motors[0].m0.power = -100
   R.motors[0].m1.power = -100
@@ -63,7 +51,8 @@ def right():
   R.motors[1].m0.power = 0
   R.motors[1].m1.power = 0
   
-def turnAround(angle):
+def turnAround():
+  angle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))  
   R.motors[0].m0.power = 28
   R.motors[0].m1.power = 28
   R.motors[1].m0.power = 28
@@ -75,6 +64,18 @@ def turnAround(angle):
   R.motors[1].m0.power = 0
   R.motors[1].m1.power = 0     
  
+def turn(desired):
+  angle = float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', ''))
+  R.motors[0].m0.power = 28
+  R.motors[0].m1.power = 28
+  R.motors[1].m0.power = 28
+  R.motors[1].m1.power = 28
+  while float(R.ruggeduinos["75230313833351618141"].getAngle().replace('\n', '')) <= angle + desired:
+     sleep(0.0000000000001)
+  R.motors[0].m0.power = 0
+  R.motors[0].m1.power = 0
+  R.motors[1].m0.power = 0
+  R.motors[1].m1.power = 0   
 R.ruggeduinos["75230313833351618141"].getAngle()
 R.ruggeduinos["75230313833351618141"].getAngle()
 
@@ -82,3 +83,5 @@ forwards(1)
 backwards(1)
 left()
 right()
+turnAround()
+turnAround()
