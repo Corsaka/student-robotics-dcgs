@@ -12,7 +12,7 @@ R.init()
 R.wait_start()
 
 while True:
-  R.motors[0].m1.power = 50
+  R.motors[0].m0.power = 50
   sleep(1.5)
-  R.motors[0].m1.power = -50
+  R.motors[0].m0.power = -50
   sleep(1.5)
