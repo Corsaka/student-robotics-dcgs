@@ -1,0 +1,20 @@
+Start:
+Forward next the first block stack
+Turn 90 left
+Close (upper & lower)
+Forward (2433 - 2367) = y
+Turn 90 right
+Ultrasonic = x
+Forward (ultrasonic = 0)
+Open (upper & lower)
+Activate solenoid
+
+Return:
+Reverse until ultrasonic = x
+Turn 90 right
+Forward y
+Turn 90 left
+Forward (250 - 150)
+Turn 90 left
+Close (upper & lower)
+
