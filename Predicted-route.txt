@@ -1,0 +1,61 @@
+Start:
+Forward (ultrasonic 1 = 0)
+Close (upper & lower)
+Turn 90 left
+Forward (approx. 3750) = y
+Turn 90 right
+Ultrasonic 2 = x
+Forward (ultrasonic 2 = 0)
+Open (upper & lower)
+Activate solenoid
+
+Return:
+Reverse (Ultrasonic 2 = x)
+Turn 90 right
+Forward y
+Turn 90 left
+Forward (ultrasonic 1 = 0)
+Close (upper & lower)
+Turn 90 left
+
+Second run:
+Forward (approx. 3050) = y
+Right 90
+Ultrasonic 2 = x
+Forward (ultrasonic = 0)
+Open (upper)
+Activate solenoid
+Reverse (Ultrasonic 2 = x)
+Turn 90 right
+Forward (400)
+Turn 90 left
+Open (lower)
+Forward (30)
+Reverse (30)
+Turn 90 right
+Forward (y - 400)
+
+Fetch blocks:
+Turn 90 left
+Forward (ultrasonic 1 = 0)
+Close (upper & lower)
+Turn 90 left
+
+Third run:
+Forward (approx.1900) = y
+Right 90
+Ultrasonic 2 = x
+Forward (ultrasonic = 0)
+Open (upper)
+Activate solenoid
+Reverse (Ultrasonic 2 = x)
+Turn 90 right
+Forward (400)
+Turn 90 left
+Open (lower)
+Forward (30)
+Reverse (30)
+Turn 90 right
+Forward (y - 400)
+
+HEAD BACK
