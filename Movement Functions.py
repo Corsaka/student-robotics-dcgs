@@ -9,6 +9,7 @@ class CustomisedRuggeduino(Ruggeduino):
               distanceIndex = distanceAngle.find('d')
               distance = distanceAngle[:distanceIndex]
               angle = distanceAngle[distanceIndex + 1:]
+              return angle
             
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
