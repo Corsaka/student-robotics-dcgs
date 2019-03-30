@@ -5,11 +5,7 @@ R = Robot.setup()
 class CustomisedRuggeduino(Ruggeduino):  
     def getAngle(self):
         with self.lock:
-              distanceAngle = self.command("u")
-              distanceIndex = distanceAngle.find('d')
-              distance = distanceAngle[:distanceIndex]
-              angle = distanceAngle[distanceIndex + 1:]
-              return angle
+            return self.command("t")
             
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
