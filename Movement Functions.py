@@ -6,6 +6,9 @@ class CustomisedRuggeduino(Ruggeduino):
     def getAngle(self):
         with self.lock:
             return self.command("t")
+    def getDistance(self):
+	with self.lock:
+	    return self.command("u")
             
 R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
