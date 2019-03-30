@@ -14,12 +14,15 @@ R.ruggeduino_set_handler_by_fwver("SRcustom", CustomisedRuggeduino)
 R.init()
 R.wait_start()
                    
-def forwards(time):
-  R.motors[0].m1.power = -100
+def forwards(distance):	
+  initialDistance = getDistance()
+  while getDistance() - initialDistance <= distance:
+  R.motors[0].m1.power = 100
   R.motors[1].m1.power = 100
-  sleep(time)
   
 def backwards(time):
+  initialDistance = getDistance()
+  while initialDistance - getDistance() <= distance:
   R.motors[0].m1.power = 100
   R.motors[1].m1.power = -100
   sleep(time)
@@ -62,8 +65,8 @@ def turn(desired):
 R.ruggeduinos["75230313833351618141"].getAngle()
 R.ruggeduinos["75230313833351618141"].getAngle()
 
-forwards(1)
-backwards(1)
+forwards(100)
+backwards(100)
 left()
 right()
 turnAround()
